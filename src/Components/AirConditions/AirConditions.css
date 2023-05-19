@@ -1,0 +1,56 @@
+.airConditions {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  background-color: var(--medium-blue);
+  margin-top: 1em;
+  padding: 2em;
+  border-radius: 25px;
+  color: var(--medium-grey);
+}
+
+.airConditions__container {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5em;
+
+  margin-top: 0.4em;
+}
+
+.conditions__label > h2 {
+  font-size: 30px;
+  margin-top: 0.5em;
+
+  color: var(--light-grey);
+  text-align: center;
+}
+
+.airConditions__line1,
+.airConditions__line2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 0 2em;
+  padding-right: 6em;
+}
+
+.conditions__label {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 9rem;
+}
+
+.airConditions__container > svg {
+  width: 32px;
+  height: 32px;
+}
+
+.airConditions__container > svg > path,
+.airConditions__container > svg > circle {
+  fill: var(--medium-grey);
+  stroke: var(--medium-grey);
+}

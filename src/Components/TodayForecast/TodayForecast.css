@@ -1,0 +1,37 @@
+.today__forecast {
+  padding: 2em;
+  background-color: var(--medium-blue);
+
+  color: var(--medium-grey);
+  border-radius: 25px;
+}
+
+.today__forecast-weather {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  margin-top: 2em;
+}
+
+.today__forecast-weather > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.today__forecast-weather > div > h3 {
+  font-size: 30px;
+  color: var(--light-grey);
+}
+
+.today__forecast-weather > div > img {
+  width: 80px;
+  margin-top: 0.5em;
+}
+
+.today__forecast-divider {
+  color: red;
+  height: 10rem;
+  border: solid 1px var(--medium-grey);
+}

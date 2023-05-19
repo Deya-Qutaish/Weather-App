@@ -1,0 +1,50 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  background-color: var(--medium-blue);
+  padding: 1.5em 0.5em;
+  max-width: 4rem;
+  height: 90%;
+  border-radius: 20px;
+}
+
+.menu__status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #35455e;
+
+  border-radius: 25px;
+  margin-bottom: 4em;
+}
+
+.menu__svg-container {
+  cursor: pointer;
+}
+
+.menu__svg-container > svg {
+  right: 0;
+  position: relative;
+  transition: right ease-in 0.2s;
+
+  width: 48px;
+  height: 48px;
+  margin-bottom: 2em;
+}
+.menu__svg-container:hover > svg {
+  right: -5px;
+  transition: right ease-in 0.2s;
+}
+
+.menu__svg-container > svg > path {
+  fill: var(--medium-grey);
+  transition: 0.3s;
+}
+
+.menu__svg-container:hover > svg > path {
+  fill: var(--light-grey);
+  transition: 0.3s;
+}

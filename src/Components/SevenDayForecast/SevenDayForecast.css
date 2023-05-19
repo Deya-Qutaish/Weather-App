@@ -1,0 +1,48 @@
+.weekForecast {
+  background-color: var(--medium-blue);
+  padding: 2em;
+  border-radius: 25px;
+  width: 560px;
+  height: 806px;
+
+  margin-top: 3em;
+  color: var(--medium-grey);
+}
+
+.weekForecast__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin-top: 1em;
+  height: 95%;
+}
+
+.day__forecast {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.day__forecast > h4 {
+  font-size: 20px;
+  width: 4rem;
+  margin: 0 0.75em;
+}
+
+.forecast__temp {
+  text-align: end;
+}
+
+.day__forecast > label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 15rem;
+}
+
+.forecast__divider {
+  border: solid 1px;
+  width: 100%;
+  color: var(--dark-grey);
+}

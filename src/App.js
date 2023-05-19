@@ -1,23 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
+import Menu from "./Components/Menu/Menu";
+import SearchBar from "./Components/SearchBar/SearchBar";
+import TodayForecast from "./Components/TodayForecast/TodayForecast";
+import Weather from "./Components/Weather/Weather";
+import AirConditions from "./Components/AirConditions/AirConditions";
+import SevenDayForecast from "./Components/SevenDayForecast/SevenDayForecast";
 
 function App() {
+  const [weather, setWeather] = useState();
+
+  useEffect(() => {
+    const getWeather = async () => {
+      try {
+        const response = await fetch(
+          "http://api.weatherapi.com/v1/forecast.json?key=41950efd61514fcd98c182816231805 &q=London&aqi=no&days=7"
+        );
+        const data = await response.json();
+
+        setWeather(data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    getWeather();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Menu />
+      {weather ? (
+        <>
+          <div>
+            <SearchBar />
+            <Weather weather={weather} />
+            <TodayForecast weather={weather} />
+            <AirConditions weather={weather} />{" "}
+          </div>
+          <div>
+            <SevenDayForecast weather={weather} />
+          </div>
+        </>
+      ) : (
+        <h1>404 INFO NOT FOUND</h1>
+      )}
     </div>
   );
 }

@@ -1,0 +1,10 @@
+.search-bar {
+  padding: 1em 1em;
+  width: 1100px;
+  border-radius: 10px;
+
+  background-color: var(--medium-blue);
+  color: var(--light-grey);
+  outline: none;
+  border: none;
+}
