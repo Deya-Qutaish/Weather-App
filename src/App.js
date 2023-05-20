@@ -9,12 +9,13 @@ import SevenDayForecast from "./Components/SevenDayForecast/SevenDayForecast";
 
 function App() {
   const [weather, setWeather] = useState();
+  const [searchLocation, setSearchLocation] = useState();
 
   useEffect(() => {
     const getWeather = async () => {
       try {
         const response = await fetch(
-          "http://api.weatherapi.com/v1/forecast.json?key=41950efd61514fcd98c182816231805 &q=London&aqi=no&days=7"
+          "http://api.weatherapi.com/v1/forecast.json?key=41950efd61514fcd98c182816231805 &q=leeds&aqi=no&days=7"
         );
         const data = await response.json();
 
@@ -32,7 +33,7 @@ function App() {
       {weather ? (
         <>
           <div>
-            <SearchBar />
+            <SearchBar setSearchLocation={setSearchLocation} />
             <Weather weather={weather} />
             <TodayForecast weather={weather} />
             <AirConditions weather={weather} />{" "}

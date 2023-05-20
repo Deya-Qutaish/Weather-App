@@ -18,13 +18,12 @@ const AirConditions = ({ weather }) => {
   const formatter = new Intl.DateTimeFormat(undefined, options);
   const formattedTime = formatter.format(currentTime);
 
-  const [currentForecast] = weather?.forecast.forecastday[0].hour?.filter(
+  const [currentForecast] = weather.forecast.forecastday[0].hour?.filter(
     (hour) => {
       return hour.time.split(" ")[1].split(":")[0] === formattedTime;
     }
   );
-
-  console.log(currentForecast);
+  console.log(weather);
   return (
     <div className="airConditions">
       <h5>AIR CONDITIONS</h5>

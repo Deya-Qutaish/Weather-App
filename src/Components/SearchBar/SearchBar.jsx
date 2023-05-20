@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./SearchBar.css";
 
-const SearchBar = () => {
+const SearchBar = ({ setSearchLocation }) => {
   const [inputValue, setInputValue] = useState();
   const [coordinates, setCoordinates] = useState();
   const [location, setLocation] = useState();
