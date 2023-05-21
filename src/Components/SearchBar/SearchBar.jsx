@@ -26,7 +26,7 @@ const SearchBar = ({ setSearchLocation }) => {
           );
           const data = await response.json();
 
-          setCoordinates(data);
+          setSearchLocation(data);
         }
       } catch (err) {
         console.error(err);

@@ -23,7 +23,6 @@ const AirConditions = ({ weather }) => {
       return hour.time.split(" ")[1].split(":")[0] === formattedTime;
     }
   );
-  console.log(weather);
   return (
     <div className="airConditions">
       <h5>AIR CONDITIONS</h5>
