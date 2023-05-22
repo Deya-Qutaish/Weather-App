@@ -11,7 +11,7 @@ const AirConditions = ({ weather }) => {
   const currentTime = new Date();
 
   const options = {
-    timeZone: weather?.location.tz_id,
+    timeZone: weather?.location?.tz_id,
     hour: "numeric",
     hour12: false,
   };

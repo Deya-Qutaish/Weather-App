@@ -9,7 +9,7 @@ const Weather = ({ weather }) => {
   const currentTime = new Date();
 
   const options = {
-    timeZone: weather?.location.tz_id,
+    timeZone: weather?.location?.tz_id,
     hour: "numeric",
     hour12: false,
   };
@@ -25,7 +25,9 @@ const Weather = ({ weather }) => {
   return (
     <div className="weather__container">
       <div className="weather__container-text">
-        <h2>{location?.name}</h2>
+        <h2>
+          {location?.name} - {location.country}
+        </h2>
         <h6>Chance of rain: {currentForecast?.chance_of_rain}%</h6>
         <h1>
           {currentWeather?.temp_c}°{" "}

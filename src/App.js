@@ -28,28 +28,30 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const getIpLocation = async () => {
-      try {
+    const getLocation = async () => {
+      if (ip) {
         const response = await fetch(
-          `http://api.positionstack.com/v1/reverse?access_key=7d8728b80ddb2e65aa72efbedd8eec03&query=212.34.12.48`
+          `https://api.techniknews.net/ipgeo/${ip.ip}`
         );
         const data = await response.json();
 
         setIpLocation(data);
-      } catch (err) {
-        console.log(err);
       }
     };
-
-    getIpLocation();
-  }, []);
-  console.log(ipLocation);
+    getLocation();
+  }, [ip]);
 
   useEffect(() => {
     const getWeather = async () => {
+      // const currentQuery = searchLocation
+      //   ? searchLocation[0].name
+      //   : ipLocation.city;
+
       try {
         const response = await fetch(
-          `http://api.weatherapi.com/v1/forecast.json?key=41950efd61514fcd98c182816231805&q=virginia&aqi=no&days=7`
+          `http://api.weatherapi.com/v1/forecast.json?key=41950efd61514fcd98c182816231805&q=${
+            searchLocation ? searchLocation[0].name : ipLocation.city
+          }&aqi=no&days=7`
         );
         const data = await response.json();
 
@@ -59,7 +61,8 @@ function App() {
       }
     };
     getWeather();
-  }, []);
+  }, [ipLocation, searchLocation]);
+  console.log(weather);
 
   return (
     <div className="App">

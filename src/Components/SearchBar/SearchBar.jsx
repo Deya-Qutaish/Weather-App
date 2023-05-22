@@ -22,10 +22,10 @@ const SearchBar = ({ setSearchLocation }) => {
       try {
         if (location != null && location !== "") {
           const response = await fetch(
-            `http://api.openweathermap.org/geo/1.0/direct?q=London&appid=69c0a8afd6ac1db4862b0f9bcf36951f`
+            `http://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=69c0a8afd6ac1db4862b0f9bcf36951f`
           );
           const data = await response.json();
-
+          console.log(data);
           setSearchLocation(data);
         }
       } catch (err) {
