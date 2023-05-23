@@ -37,14 +37,6 @@ const Weather = ({ weather }) => {
           />
         </h1>
       </div>
-      <div className="weather__container-extra">
-        {/* <SunnySvg /> */}
-
-        <h3>
-          Weather Condition:
-          <span id="condition"> {currentWeather.condition.text}</span>
-        </h3>
-      </div>
     </div>
   );
 };

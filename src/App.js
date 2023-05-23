@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Menu from "./Components/Menu/Menu";
-import SearchBar from "./Components/SearchBar/SearchBar";
-import TodayForecast from "./Components/TodayForecast/TodayForecast";
-import Weather from "./Components/Weather/Weather";
-import AirConditions from "./Components/AirConditions/AirConditions";
-import SevenDayForecast from "./Components/SevenDayForecast/SevenDayForecast";
+import Home from "./Pages/Home/Home";
+import { Routes, Route } from "react-router-dom";
+import Settings from "./Pages/Settings/Settings";
 
 function App() {
   const [weather, setWeather] = useState();
@@ -67,21 +65,15 @@ function App() {
   return (
     <div className="App">
       <Menu />
-      {weather ? (
-        <>
-          <div>
-            <SearchBar setSearchLocation={setSearchLocation} />
-            <Weather weather={weather} />
-            <TodayForecast weather={weather} />
-            <AirConditions weather={weather} />{" "}
-          </div>
-          <div>
-            <SevenDayForecast weather={weather} />
-          </div>
-        </>
-      ) : (
-        <h1>404 INFO NOT FOUND</h1>
-      )}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home weather={weather} setSearchLocation={setSearchLocation} />
+          }
+        />
+        <Route path="/settings" element={<Settings />} />
+      </Routes>
     </div>
   );
 }
